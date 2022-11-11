@@ -27,7 +27,7 @@ export const AuthProvider = ({children}) => {
             headers:{
                 'Content-Type':'application/json'
             },
-            body:JSON.stringify({'username':e.target.username.value,'passowrd':e.target.password.value})
+            body:JSON.stringify({'username':e.target.username.value,'password':e.target.password.value})
         })
         let data = await response.json()
 
@@ -37,7 +37,7 @@ export const AuthProvider = ({children}) => {
             localStorage.setItem('authTokens', JSON.stringify(data))
             navigate('/')
         }else{
-            alert('Something went wrnog!')
+            alert('Something went wrong!')
         }
     }
 
